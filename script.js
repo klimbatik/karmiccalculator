@@ -1,5 +1,5 @@
-𝓔𝓵𝓮𝓷𝓪, [11.08.2025 19:22]
-// Полная таблица кармических хвостов
+// script.js — Калькулятор кармического хвоста (гарантированно рабочий)
+
 const karmicTails = {
     "18-6-6": {
         name: "Любовная магия",
@@ -107,7 +107,6 @@ const karmicTails = {
     }
 };
 
-// Функция: свернуть число до одной цифры
 function reduceToSingle(num) {
     while (num > 9 && ![11, 22, 33].includes(num)) {
         num = Math.floor(num / 10) + (num % 10);
@@ -115,38 +114,27 @@ function reduceToSingle(num) {
     return num;
 }
 
-// Функция: рассчитать кармический хвост по ДД.ММ.ГГГГ
 function calculateKarmicTail(dateStr) {
-    // Проверяем формат: ДД.ММ.ГГГГ
     const regex = /^(\d{2})\.(\d{2})\.(\d{4})$/;
     const match = dateStr.match(regex);
-    
-    if (!match) {
-        throw new Error("Неверный формат даты. Используйте ДД.ММ.ГГГГ");
-    }
+    if (!match) throw new Error("Неверный формат. Используйте ДД.ММ.ГГГГ");
 
-𝓔𝓵𝓮𝓷𝓪, [11.08.2025 19:22]
-const day = parseInt(match[1], 10);
+    const day = parseInt(match[1], 10);
     const month = parseInt(match[2], 10);
     const year = parseInt(match[3], 10);
 
-    // Проверка диапазонов
-    if (day < 1  day > 31  month < 1  month > 12  year < 1900 || year > 2100) {
+𝓔𝓵𝓮𝓷𝓪, [11.08.2025 20:00]
+if (day < 1  day > 31  month < 1  month > 12  year < 1900 || year > 2100) {
         throw new Error("Некорректная дата");
     }
 
-    // Сумма всех цифр
-    const sumDigits = [...(day + month + year).toString()]
-        .map(Number)
-        .reduce((a, b) => a + b, 0);
-
+    const sumDigits = [...(day + month + year).toString()].map(Number).reduce((a, b) => a + b, 0);
     const lifePath = reduceToSingle(sumDigits);
     const karmicNumber = lifePath === 6 ? 18 : lifePath * 3;
 
     return ${karmicNumber}-${lifePath}-${lifePath};
 }
 
-// Запуск после загрузки страницы
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("dateForm");
     const birthDateInput = document.getElementById("birthDate");
@@ -155,31 +143,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const nameEl = document.getElementById("karmicTailName");
     const descEl = document.getElementById("karmicTailDescription");
 
-    if (form) {
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const birthDate = birthDateInput.value.trim();
 
-            const birthDate = birthDateInput.value.trim();
-            if (!birthDate) {
-                alert("Введите дату рождения!");
-                return;
+        if (!birthDate) {
+            alert("Введите дату рождения!");
+            return;
+        }
+
+        try {
+            const karmicTail = calculateKarmicTail(birthDate);
+            const result = karmicTails[karmicTail];
+
+            if (result) {
+                codeEl.textContent = Код: ${karmicTail};
+                nameEl.textContent = Название: ${result.name};
+                descEl.textContent = Описание: ${result.description};
+                resultDiv.style.display = "block";
+            } else {
+                alert("Кармический хвост не найден. Попробуйте другую дату.");
             }
-
-            try {
-                const karmicTail = calculateKarmicTail(birthDate);
-                const result = karmicTails[karmicTail];
-
-                if (result) {
-                    codeEl.textContent = Код: ${karmicTail};
-                    nameEl.textContent = Название: ${result.name};
-                    descEl.textContent = Описание: ${result.description};
-                    resultDiv.style.display = "block";
-                } else {
-                    alert("Не удалось определить ваш кармический хвост. Попробуйте другую дату.");
-                }
-            } catch (error) {
-                alert(error.message);
-            }
-        });
-    }
+        } catch (error) {
+            alert(error.message);
+        }
+    });
 });
