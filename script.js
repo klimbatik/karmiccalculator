@@ -1,3 +1,5 @@
+𝓔𝓵𝓮𝓷𝓪, [11.08.2025 20:15]
+// Таблица кармических хвостов
 const karmicTails = {
     "18-6-6": {
         name: "Любовная магия",
@@ -105,6 +107,7 @@ const karmicTails = {
     }
 };
 
+// Свёртка числа
 function reduceToSingle(num) {
     while (num > 9 && ![11, 22, 33].includes(num)) {
         num = Math.floor(num / 10) + (num % 10);
@@ -112,6 +115,7 @@ function reduceToSingle(num) {
     return num;
 }
 
+// Расчёт хвоста
 function calculateKarmicTail(dateStr) {
     const regex = /^(\d{2})\.(\d{2})\.(\d{4})$/;
     const match = dateStr.match(regex);
@@ -121,7 +125,7 @@ function calculateKarmicTail(dateStr) {
     const month = parseInt(match[2], 10);
     const year = parseInt(match[3], 10);
 
-𝓔𝓵𝓮𝓷𝓪, [11.08.2025 20:00]
+𝓔𝓵𝓮𝓷𝓪, [11.08.2025 20:15]
 if (day < 1  day > 31  month < 1  month > 12  year < 1900 || year > 2100) {
         throw new Error("Некорректная дата");
     }
@@ -133,6 +137,7 @@ if (day < 1  day > 31  month < 1  month > 12  year < 1900 || year > 2100) {
     return ${karmicNumber}-${lifePath}-${lifePath};
 }
 
+// Запуск
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("dateForm");
     const birthDateInput = document.getElementById("birthDate");
@@ -167,4 +172,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
