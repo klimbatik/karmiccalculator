@@ -1,4 +1,3 @@
-𝓔𝓵𝓮𝓷𝓪, [11.08.2025 20:15]
 // Таблица кармических хвостов
 const karmicTails = {
     "18-6-6": {
@@ -172,3 +171,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
