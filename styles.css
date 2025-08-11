@@ -1,68 +1,90 @@
-﻿<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор Кармического Хвоста</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>🔮 Калькулятор Кармического Хвоста</h1>
-        <p>Введите дату рождения, чтобы узнать свой кармический хвост:</p>
-        <form id="dateForm">
-            <label for="birthDate">Дата рождения:</label>
-            <input type="date" id="birthDate" name="birthDate" required>
-            <button type="submit">Рассчитать хвост</button>
-        </form>
-        <div id="result" style="display: none;">
-            <h2>Ваш кармический хвост:</h2>
-            <p id="karmicTailCode"></p>
-            <p id="karmicTailName"></p>
-            <p id="karmicTailDescription"></p>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-
-𝓔𝓵𝓮𝓷𝓪, [11.08.2025 15:25]
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8e6ff;
+/* Обнуление */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Чёрный фон с мерцающими звёздами */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    color: #333;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
 }
 
+/* Анимация звёзд */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.stars::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+        radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+        radial-gradient(1px 1px at 60px 50px, #ddd, transparent),
+        radial-gradient(1px 1px at 100px 120px, #fff, transparent),
+        radial-gradient(1px 1px at 150px 80px, #eee, transparent),
+        radial-gradient(2px 2px at 200px 200px, #fff, transparent),
+        radial-gradient(1px 1px at 300px 100px, #fff, transparent),
+        radial-gradient(1px 1px at 400px 300px, #ddd, transparent),
+        radial-gradient(2px 2px at 500px 150px, #fff, transparent),
+        radial-gradient(1px 1px at 600px 400px, #fff, transparent),
+        radial-gradient(1px 1px at 700px 200px, #eee, transparent),
+        radial-gradient(2px 2px at 800px 500px, #fff, transparent);
+    background-repeat: repeat;
+    animation: twinkle 5s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* Основной контейнер */
 .container {
-    text-align: center;
-    background: #ffffff;
+    background: rgba(0, 0, 0, 0.7);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(177, 141, 160, 0.4);
     width: 90%;
     max-width: 500px;
-    margin: 0 auto; /* центрирует по горизонтали */
+    backdrop-filter: blur(5px);
+    border: 1px solid #b18da0;
 }
 
 h1 {
-    color: #4a2c82;
+    font-size: 1.8em;
+    color: #fff;
     margin-bottom: 15px;
-}
-
-h2 {
-    color: #5a3d8a;
+    text-shadow: 0 0 10px rgba(177, 141, 160, 0.6);
 }
 
 p {
     font-size: 1.1em;
-    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 20px;
 }
 
+/* Форма */
 form {
     margin: 20px 0;
 }
@@ -71,46 +93,56 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #4a2c82;
+    color: #b18da0;
 }
 
 input[type="date"] {
     padding: 10px;
     width: 80%;
     max-width: 300px;
-    border: 1px solid #ccc;
+    border: 1px solid #b18da0;
     border-radius: 6px;
+    background-color: #111;
+    color: #fff;
     font-size: 1em;
-    margin-bottom: 15px;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* Кнопка */
 button {
+    margin-top: 15px;
     padding: 12px 24px;
-    background-color: #7b4dff;
+    background-color: #b18da0;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1em;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #6a38e6;
+    background-color: #c9a3b8;
+    transform: scale(1.05);
 }
 
+/* Результат */
 #result {
     margin-top: 25px;
     padding: 20px;
-    background-color: #f0e6ff;
+    background: rgba(177, 141, 160, 0.2);
     border-radius: 10px;
-    border-left: 4px solid #7b4dff;
+    border-left: 3px solid #b18da0;
 }
 
-#karmicTailCode, #karmicTailName, #karmicTailDescription {
+#karmicTailCode,
+#karmicTailName,
+#karmicTailDescription {
     margin: 10px 0;
     font-size: 1.2em;
-    color: #333;
-
+    color: #fff;
+    word-wrap: break-word;
 }
-
