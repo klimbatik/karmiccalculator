@@ -1,3 +1,4 @@
+𝓔𝓵𝓮𝓷𝓪, [11.08.2025 19:22]
 // Полная таблица кармических хвостов
 const karmicTails = {
     "18-6-6": {
@@ -106,7 +107,7 @@ const karmicTails = {
     }
 };
 
-// Функция: свернуть число до одной цифры (кроме 11, 22, 33)
+// Функция: свернуть число до одной цифры
 function reduceToSingle(num) {
     while (num > 9 && ![11, 22, 33].includes(num)) {
         num = Math.floor(num / 10) + (num % 10);
@@ -114,15 +115,27 @@ function reduceToSingle(num) {
     return num;
 }
 
-// Функция: рассчитать кармический хвост
+// Функция: рассчитать кармический хвост по ДД.ММ.ГГГГ
 function calculateKarmicTail(dateStr) {
-    const date = new Date(dateStr);
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
+    // Проверяем формат: ДД.ММ.ГГГГ
+    const regex = /^(\d{2})\.(\d{2})\.(\d{4})$/;
+    const match = dateStr.match(regex);
+    
+    if (!match) {
+        throw new Error("Неверный формат даты. Используйте ДД.ММ.ГГГГ");
+    }
 
-𝓔𝓵𝓮𝓷𝓪, [11.08.2025 19:12]
-// Сумма всех цифр даты
+𝓔𝓵𝓮𝓷𝓪, [11.08.2025 19:22]
+const day = parseInt(match[1], 10);
+    const month = parseInt(match[2], 10);
+    const year = parseInt(match[3], 10);
+
+    // Проверка диапазонов
+    if (day < 1  day > 31  month < 1  month > 12  year < 1900 || year > 2100) {
+        throw new Error("Некорректная дата");
+    }
+
+    // Сумма всех цифр
     const sumDigits = [...(day + month + year).toString()]
         .map(Number)
         .reduce((a, b) => a + b, 0);
@@ -146,22 +159,26 @@ document.addEventListener("DOMContentLoaded", function () {
         form.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            const birthDate = birthDateInput.value;
+            const birthDate = birthDateInput.value.trim();
             if (!birthDate) {
                 alert("Введите дату рождения!");
                 return;
             }
 
-            const karmicTail = calculateKarmicTail(birthDate);
-            const result = karmicTails[karmicTail];
+            try {
+                const karmicTail = calculateKarmicTail(birthDate);
+                const result = karmicTails[karmicTail];
 
-            if (result) {
-                codeEl.textContent = Код: ${karmicTail};
-                nameEl.textContent = Название: ${result.name};
-                descEl.textContent = Описание: ${result.description};
-                resultDiv.style.display = "block";
-            } else {
-                alert("Не удалось определить ваш кармический хвост. Попробуйте другую дату.");
+                if (result) {
+                    codeEl.textContent = Код: ${karmicTail};
+                    nameEl.textContent = Название: ${result.name};
+                    descEl.textContent = Описание: ${result.description};
+                    resultDiv.style.display = "block";
+                } else {
+                    alert("Не удалось определить ваш кармический хвост. Попробуйте другую дату.");
+                }
+            } catch (error) {
+                alert(error.message);
             }
         });
     }
