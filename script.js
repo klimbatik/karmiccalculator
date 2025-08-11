@@ -1,5 +1,3 @@
-// script.js — Калькулятор кармического хвоста (гарантированно рабочий)
-
 const karmicTails = {
     "18-6-6": {
         name: "Любовная магия",
@@ -169,3 +167,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
