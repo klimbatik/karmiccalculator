@@ -119,7 +119,6 @@ function calculateKarmicTail(dateStr) {
     const match = dateStr.match(regex);
     if (!match) throw new Error("Неверный формат. Используйте ДД.ММ.ГГГГ");
 
-𝓔𝓵𝓮𝓷𝓪, [11.08.2025 21:25]
 const day = parseInt(match[1], 10);
     const month = parseInt(match[2], 10);
     const year = parseInt(match[3], 10);
@@ -178,4 +177,5 @@ document.addEventListener("DOMContentLoaded", function () {
             alert(error.message);
         }
     });
+
 });
