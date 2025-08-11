@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Чёрный фон с мерцающими звёздами */
+/* Чёрный фон с крупными мерцающими звёздами */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #000;
@@ -19,7 +19,7 @@ body {
     text-align: center;
 }
 
-/* Анимация звёзд */
+/* Крупные звёзды */
 .stars {
     position: fixed;
     top: 0;
@@ -38,28 +38,24 @@ body {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-        radial-gradient(2px 2px at 40px 70px, #fff, transparent),
-        radial-gradient(1px 1px at 60px 50px, #ddd, transparent),
-        radial-gradient(1px 1px at 100px 120px, #fff, transparent),
-        radial-gradient(1px 1px at 150px 80px, #eee, transparent),
-        radial-gradient(2px 2px at 200px 200px, #fff, transparent),
-        radial-gradient(1px 1px at 300px 100px, #fff, transparent),
-        radial-gradient(1px 1px at 400px 300px, #ddd, transparent),
-        radial-gradient(2px 2px at 500px 150px, #fff, transparent),
-        radial-gradient(1px 1px at 600px 400px, #fff, transparent),
-        radial-gradient(1px 1px at 700px 200px, #eee, transparent),
-        radial-gradient(2px 2px at 800px 500px, #fff, transparent);
-    background-repeat: repeat;
-    animation: twinkle 5s infinite alternate;
+        radial-gradient(5px 5px at 10% 20%, #fff, transparent 50%),
+        radial-gradient(6px 6px at 30% 70%, #fff, transparent 50%),
+        radial-gradient(5px 5px at 50% 30%, #ddd, transparent 50%),
+        radial-gradient(7px 7px at 70% 60%, #fff, transparent 50%),
+        radial-gradient(5px 5px at 85% 15%, #eee, transparent 50%),
+        radial-gradient(6px 6px at 90% 80%, #fff, transparent 50%),
+        radial-gradient(5px 5px at 20% 90%, #ddd, transparent 50%),
+        radial-gradient(7px 7px at 60% 40%, #fff, transparent 50%);
+    background-repeat: no-repeat;
+    animation: twinkle 4s infinite alternate;
 }
 
 @keyframes twinkle {
-    0% { opacity: 0.3; }
+    0% { opacity: 0.4; }
     100% { opacity: 1; }
 }
 
-/* Основной контейнер */
+/* Контейнер */
 .container {
     background: rgba(0, 0, 0, 0.7);
     padding: 30px;
@@ -71,11 +67,20 @@ body {
     border: 1px solid #b18da0;
 }
 
-h1 {
-    font-size: 1.8em;
+/* Заголовок */
+.main-title {
+    font-size: 2.5em;
     color: #fff;
-    margin-bottom: 15px;
-    text-shadow: 0 0 10px rgba(177, 141, 160, 0.6);
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(177, 141, 160, 0.8);
+    font-weight: bold;
+}
+
+.sub-title {
+    font-size: 1.6em;
+    color: #b18da0;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 p {
@@ -87,6 +92,9 @@ p {
 /* Форма */
 form {
     margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 label {
@@ -94,10 +102,12 @@ label {
     margin-bottom: 8px;
     font-weight: bold;
     color: #b18da0;
+    align-self: flex-start;
+    margin-left: 10%;
 }
 
-input[type="date"] {
-    padding: 10px;
+input[type="text"] {
+    padding: 12px;
     width: 80%;
     max-width: 300px;
     border: 1px solid #b18da0;
@@ -105,28 +115,25 @@ input[type="date"] {
     background-color: #111;
     color: #fff;
     font-size: 1em;
+    margin-bottom: 20px;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-}
-
-/* Кнопка */
 button {
-    margin-top: 15px;
-    padding: 12px 24px;
+    padding: 12px 28px;
     background-color: #b18da0;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.1em;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(177, 141, 160, 0.3);
 }
 
 button:hover {
     background-color: #c9a3b8;
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 6px 15px rgba(177, 141, 160, 0.5);
 }
 
 /* Результат */
@@ -138,11 +145,17 @@ button:hover {
     border-left: 3px solid #b18da0;
 }
 
+#result h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
 #karmicTailCode,
 #karmicTailName,
 #karmicTailDescription {
-    margin: 10px 0;
-    font-size: 1.2em;
+    margin: 8px 0;
+    font-size: 1.15em;
     color: #fff;
     word-wrap: break-word;
 }
