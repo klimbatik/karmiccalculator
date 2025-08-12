@@ -185,7 +185,7 @@ input[type="text"] {
     background: #111;
     color: #fff;
     font-size: 1.1em;
-    font-family: 'Courier New', monospace; /* деловой шрифт */
+    font-family: 'Monotype Corsiva', monospace; /* деловой шрифт */
     text-align: center;
     transition: border 0.3s;
 }
@@ -239,3 +239,4 @@ button:hover {
     color: #fff;
     font-size: 1em;
 }
+
