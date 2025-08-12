@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор кармических уроков</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <h1 class="main-title">Калькулятор</h1>
+        <h2 class="sub-title">Кармических уроков</h2>
+        <form id="dateForm">
+            <label for="birthDate" class="center-label">Дата рождения:</label>
+            <input 
+                type="text" 
+                id="birthDate" 
+                name="birthDate" 
+                placeholder="Например: 06.05.1984" 
+                required
+            >
+            <button type="submit">Рассчитать</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
