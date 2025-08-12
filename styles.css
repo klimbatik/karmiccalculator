@@ -213,7 +213,7 @@ button:hover {
 
 /* Прокручиваемый блок результатов */
 #result {
-    max-height: 60vh;        /* Ограничение по высоте — не до конца экрана */
+    max-height: 40vh;        /* Ограничение по высоте — не до конца экрана */
     min-height: 100px;        /* Можно увидеть даже маленький текст */
     overflow-y: auto;         /* Прокрутка, если текст длинный */
     margin-top: 25px;
@@ -261,3 +261,4 @@ button:hover {
 #result::-webkit-scrollbar-thumb:hover {
     background: #c9a3b8;
 }
+
