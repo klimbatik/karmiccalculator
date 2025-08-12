@@ -1,1 +1,12 @@
-
+{
+  "name": "karmiccalculator",
+  "version": "1.0.0",
+  "description": "Калькулятор кармических уроков по Александровым",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Сборка не требуется — сайт готов к публикации'"
+  },
+  "keywords": ["нумерология", "карма", "калькулятор"],
+  "author": "klimbatik",
+  "license": "MIT"
+}
