@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор Кармического Хвоста</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <h1 class="main-title">Рассчитать</h1>
+        <h2 class="sub-title">Кармический хвост</h2>
+        <p>Введите дату рождения в формате ДД.ММ.ГГГГ</p>
+        <form id="dateForm">
+            <label for="birthDate">Дата рождения:</label>
+            <input 
+                type="text" 
+                id="birthDate" 
+                name="birthDate" 
+                placeholder="Например: 06.05.1984" 
+                required
+            >
+            <button type="submit">Рассчитать</button>
+        </form>
+        <div id="result" style="display: none;">
+            <h3>Ваш кармический хвост:</h3>
+            <p id="karmicTailCode"></p>
+            <p id="karmicTailName"></p>
+            <p id="karmicTailDescription"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
