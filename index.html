@@ -11,26 +11,18 @@
     <div class="container">
         <h1 class="main-title">Калькулятор</h1>
         <h2 class="sub-title">Кармических уроков</h2>
-        
         <form id="dateForm">
             <label for="birthDate" class="center-label">Дата рождения:</label>
             <input 
                 type="text" 
                 id="birthDate" 
                 name="birthDate" 
-                placeholder="Например: 06.05.1984" 
+                placeholder="Например: 06.05.2000" 
                 required
             >
             <button type="submit">Рассчитать</button>
         </form>
-
-        <div id="result" style="display: none;">
-            <h3>Ваша карма и родовые программы</h3>
-            <div id="karmicNumbers"></div>
-            <div id="missingDigits"></div>
-            <div id="familyBlocks"></div>
-            <div id="summary"></div>
-        </div>
+        <div id="result"></div>
     </div>
     <script src="script.js"></script>
 </body>
