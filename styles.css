@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Фон с мерцающими звёздами */
+/* Фон: ночь с луной и рунами */
 body {
     font-family: 'Segoe UI', sans-serif;
     background: #000;
@@ -19,7 +19,42 @@ body {
     text-align: center;
 }
 
-/* Много ярких звёзд */
+/* Тёмное небо */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at top, #1a0b33 0%, #000 70%);
+    z-index: -3;
+}
+
+/* Луна */
+.moon {
+    position: fixed;
+    top: 5%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 40px 5px rgba(255, 255, 255, 0.6),
+        inset 10px 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    animation: glow 4s infinite alternate;
+    pointer-events: none;
+}
+
+/* Свечение луны */
+@keyframes glow {
+    0% { box-shadow: 0 0 40px 5px rgba(255, 255, 255, 0.6); }
+    100% { box-shadow: 0 0 60px 10px rgba(255, 255, 255, 0.8); }
+}
+
+/* Мерцающие звёзды */
 .stars {
     position: fixed;
     top: 0;
@@ -27,98 +62,65 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: -1;
-    background: 
-        radial-gradient(2px 2px at 1% 1%, #fff, transparent),
-        radial-gradient(2px 2px at 3% 5%, #fff, transparent),
-        radial-gradient(2px 2px at 6% 10%, #fff, transparent),
-        radial-gradient(2px 2px at 8% 15%, #fff, transparent),
-        radial-gradient(2px 2px at 12% 7%, #fff, transparent),
-        radial-gradient(2px 2px at 15% 20%, #fff, transparent),
-        radial-gradient(2px 2px at 18% 25%, #fff, transparent),
-        radial-gradient(2px 2px at 22% 30%, #fff, transparent),
-        radial-gradient(2px 2px at 25% 35%, #fff, transparent),
-        radial-gradient(2px 2px at 28% 40%, #fff, transparent),
-        radial-gradient(2px 2px at 32% 45%, #fff, transparent),
-        radial-gradient(2px 2px at 35% 50%, #fff, transparent),
-        radial-gradient(2px 2px at 38% 55%, #fff, transparent),
-        radial-gradient(2px 2px at 42% 60%, #fff, transparent),
-        radial-gradient(2px 2px at 45% 65%, #fff, transparent),
-        radial-gradient(2px 2px at 48% 70%, #fff, transparent),
-        radial-gradient(2px 2px at 52% 75%, #fff, transparent),
-        radial-gradient(2px 2px at 55% 80%, #fff, transparent),
-        radial-gradient(2px 2px at 58% 85%, #fff, transparent),
-        radial-gradient(2px 2px at 62% 90%, #fff, transparent),
-        radial-gradient(2px 2px at 65% 95%, #fff, transparent),
-        radial-gradient(2px 2px at 70% 2%, #fff, transparent),
-        radial-gradient(2px 2px at 75% 6%, #fff, transparent),
-        radial-gradient(2px 2px at 80% 12%, #fff, transparent),
-        radial-gradient(2px 2px at 85% 18%, #fff, transparent),
-        radial-gradient(2px 2px at 90% 24%, #fff, transparent),
-        radial-gradient(2px 2px at 95% 30%, #fff, transparent),
-        radial-gradient(2px 2px at 98% 35%, #fff, transparent),
-        radial-gradient(2px 2px at 1% 40%, #fff, transparent),
-        radial-gradient(2px 2px at 3% 45%, #fff, transparent),
-        radial-gradient(2px 2px at 6% 50%, #fff, transparent),
-        radial-gradient(2px 2px at 8% 55%, #fff, transparent),
-        radial-gradient(2px 2px at 10% 60%, #fff, transparent),
-        radial-gradient(2px 2px at 12% 65%, #fff, transparent),
-        radial-gradient(2px 2px at 14% 70%, #fff, transparent),
-        radial-gradient(2px 2px at 16% 75%, #fff, transparent),
-        radial-gradient(2px 2px at 18% 80%, #fff, transparent),
-        radial-gradient(2px 2px at 20% 85%, #fff, transparent),
-        radial-gradient(2px 2px at 22% 90%, #fff, transparent),
-        radial-gradient(2px 2px at 24% 95%, #fff, transparent),
-        radial-gradient(2px 2px at 26% 10%, #fff, transparent),
-        radial-gradient(2px 2px at 28% 15%, #fff, transparent),
-        radial-gradient(2px 2px at 30% 20%, #fff, transparent),
-        radial-gradient(2px 2px at 32% 25%, #fff, transparent),
-        radial-gradient(2px 2px at 34% 30%, #fff, transparent),
-        radial-gradient(2px 2px at 36% 35%, #fff, transparent),
-        radial-gradient(2px 2px at 38% 40%, #fff, transparent),
-        radial-gradient(2px 2px at 40% 45%, #fff, transparent),
-        radial-gradient(2px 2px at 42% 50%, #fff, transparent),
-        radial-gradient(2px 2px at 44% 55%, #fff, transparent),
-        radial-gradient(2px 2px at 46% 60%, #fff, transparent),
-        radial-gradient(2px 2px at 48% 65%, #fff, transparent),
-        radial-gradient(2px 2px at 50% 70%, #fff, transparent),
-        radial-gradient(2px 2px at 52% 75%, #fff, transparent),
-        radial-gradient(2px 2px at 54% 80%, #fff, transparent),
-        radial-gradient(2px 2px at 56% 85%, #fff, transparent),
-        radial-gradient(2px 2px at 58% 90%, #fff, transparent),
-        radial-gradient(2px 2px at 60% 95%, #fff, transparent),
-        radial-gradient(2px 2px at 62% 5%, #fff, transparent),
-        radial-gradient(2px 2px at 64% 10%, #fff, transparent),
-        radial-gradient(2px 2px at 66% 15%, #fff, transparent),
-        radial-gradient(2px 2px at 68% 20%, #fff, transparent),
-        radial-gradient(2px 2px at 70% 25%, #fff, transparent),
-        radial-gradient(2px 2px at 72% 30%, #fff, transparent),
-        radial-gradient(2px 2px at 74% 35%, #fff, transparent),
-        radial-gradient(2px 2px at 76% 40%, #fff, transparent),
-        radial-gradient(2px 2px at 78% 45%, #fff, transparent),
-        radial-gradient(2px 2px at 80% 50%, #fff, transparent),
-        radial-gradient(2px 2px at 82% 55%, #fff, transparent),
-        radial-gradient(2px 2px at 84% 60%, #fff, transparent),
-        radial-gradient(2px 2px at 86% 65%, #fff, transparent),
-        radial-gradient(2px 2px at 88% 70%, #fff, transparent),
-        radial-gradient(2px 2px at 90% 75%, #fff, transparent),
-        radial-gradient(2px 2px at 92% 80%, #fff, transparent),
-        radial-gradient(2px 2px at 94% 85%, #fff, transparent),
-        radial-gradient(2px 2px at 96% 90%, #fff, transparent),
-        radial-gradient(2px 2px at 98% 95%, #fff, transparent),
-        radial-gradient(4px 4px at 25% 25%, #fff, transparent),
-        radial-gradient(4px 4px at 75% 75%, #fff, transparent),
-        radial-gradient(4px 4px at 50% 10%, #fff, transparent),
-        radial-gradient(4px 4px at 90% 50%, #fff, transparent),
-        radial-gradient(4px 4px at 10% 90%, #fff, transparent);
+    z-index: -2;
+    background-image: 
+        radial-gradient(1px 1px at 5% 15%, #fff, transparent),
+        radial-gradient(1px 1px at 20% 10%, #ddd, transparent),
+        radial-gradient(1px 1px at 35% 25%, #fff, transparent),
+        radial-gradient(1px 1px at 50% 20%, #eee, transparent),
+        radial-gradient(1px 1px at 65% 35%, #fff, transparent),
+        radial-gradient(1px 1px at 80% 30%, #ddd, transparent),
+        radial-gradient(1px 1px at 95% 45%, #fff, transparent),
+        radial-gradient(1px 1px at 10% 60%, #eee, transparent),
+        radial-gradient(1px 1px at 25% 75%, #fff, transparent),
+        radial-gradient(1px 1px at 40% 90%, #ddd, transparent),
+        radial-gradient(1px 1px at 70% 80%, #fff, transparent),
+        radial-gradient(1px 1px at 55% 50%, #eee, transparent);
     background-repeat: no-repeat;
-    animation: twinkle 3s infinite alternate;
+    opacity: 0.8;
 }
 
-@keyframes twinkle {
-    0% { opacity: 0.5; }
-    100% { opacity: 1; }
+/* Плавающие руны */
+.rune {
+    position: fixed;
+    color: #b18da0;
+    font-size: 16px;
+    font-family: 'Courier New', monospace;
+    opacity: 0;
+    animation: floatRune 30s infinite linear;
+    pointer-events: none;
+    z-index: -1;
+    text-shadow: 0 0 10px rgba(177, 141, 160, 0.6);
 }
+
+@keyframes floatRune {
+    0% {
+        transform: translateY(100vh) rotate(-10deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(10deg);
+        opacity: 0;
+    }
+}
+
+/* Расположение рун */
+.rune:nth-child(1) { top: 0; left: 5%; animation-delay: 0s; }
+.rune:nth-child(2) { top: 0; left: 20%; animation-delay: 3s; }
+.rune:nth-child(3) { top: 0; left: 35%; animation-delay: 6s; }
+.rune:nth-child(4) { top: 0; left: 50%; animation-delay: 9s; }
+.rune:nth-child(5) { top: 0; left: 65%; animation-delay: 12s; }
+.rune:nth-child(6) { top: 0; left: 80%; animation-delay: 15s; }
+.rune:nth-child(7) { top: 0; right: 5%; animation-delay: 18s; }
+.rune:nth-child(8) { top: 0; right: 20%; animation-delay: 21s; }
+.rune:nth-child(9) { top: 0; right: 35%; animation-delay: 24s; }
+.rune:nth-child(10) { top: 0; right: 50%; animation-delay: 27s; }
 
 /* Контейнер */
 .container {
@@ -176,7 +178,7 @@ input[type="text"] {
     background: #111;
     color: #fff;
     font-size: 1.1em;
-    font-family: 'Monotype Coursive', 
+    font-family: 'Courier New', monospace;
     text-align: center;
     display: block;
     margin: 0 auto 20px auto;
@@ -211,38 +213,33 @@ button:hover {
 
 /* Прокручиваемый блок результатов */
 #result {
-    max-height: 70vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    max-height: 60vh;        /* Ограничение по высоте — не до конца экрана */
+    min-height: 100px;        /* Можно увидеть даже маленький текст */
+    overflow-y: auto;         /* Прокрутка, если текст длинный */
     margin-top: 25px;
     padding: 20px;
     background: rgba(177, 141, 160, 0.1);
     border-radius: 10px;
     border-left: 4px solid #b18da0;
-    color: #b18da0;
     font-size: 1em;
     line-height: 1.6;
     display: none;
     animation: fadeIn 0.6s ease-out;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Заголовки внутри результата */
+/* Заголовки в результате — розовые */
 #result h3 {
-    margin: 25px 0 15px 0;
-    font-size: 1.3em;
     color: #b18da0;
+    margin: 20px 0 10px 0;
+    font-size: 1.3em;
+    font-weight: 600;
 }
 
-/* Параграфы */
+/* Текст описания — белый */
 #result p {
-    margin: 10px 0;
+    color: #fff;              /* Белый цвет текста */
     text-align: left;
-    color: #b18da0;
+    margin: 10px 0;
     line-height: 1.6;
 }
 
@@ -264,4 +261,3 @@ button:hover {
 #result::-webkit-scrollbar-thumb:hover {
     background: #c9a3b8;
 }
-
