@@ -176,7 +176,7 @@ input[type="text"] {
     background: #111;
     color: #fff;
     font-size: 1.1em;
-    font-family: 'Monotype Coursive', monospace;
+    font-family: 'Monotype Coursive', 
     text-align: center;
     display: block;
     margin: 0 auto 20px auto;
@@ -264,3 +264,4 @@ button:hover {
 #result::-webkit-scrollbar-thumb:hover {
     background: #c9a3b8;
 }
+
