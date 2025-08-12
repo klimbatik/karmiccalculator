@@ -5,11 +5,11 @@
     box-sizing: border-box;
 }
 
-/* Чёрный фон с крупными мерцающими звёздами */
+/* Чёрный фон с мега-яркими и густыми звёздами */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #000;
-    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    background: #000;
+    color: #e0e0e0;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@ body {
     text-align: center;
 }
 
-/* Крупные звёзды */
+/* Много ярких мерцающих звёзд */
 .stars {
     position: fixed;
     top: 0;
@@ -28,30 +28,97 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: -1;
-}
-
-.stars::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(5px 5px at 10% 20%, #fff, transparent 50%),
-        radial-gradient(6px 6px at 30% 70%, #fff, transparent 50%),
-        radial-gradient(5px 5px at 50% 30%, #ddd, transparent 50%),
-        radial-gradient(7px 7px at 70% 60%, #fff, transparent 50%),
-        radial-gradient(5px 5px at 85% 15%, #eee, transparent 50%),
-        radial-gradient(6px 6px at 90% 80%, #fff, transparent 50%),
-        radial-gradient(5px 5px at 20% 90%, #ddd, transparent 50%),
-        radial-gradient(7px 7px at 60% 40%, #fff, transparent 50%);
+    background: 
+        /* Много мелких ярких звёзд */
+        radial-gradient(2px 2px at 1% 1%, #fff, transparent),
+        radial-gradient(2px 2px at 3% 5%, #fff, transparent),
+        radial-gradient(2px 2px at 6% 10%, #fff, transparent),
+        radial-gradient(2px 2px at 8% 15%, #fff, transparent),
+        radial-gradient(2px 2px at 12% 7%, #fff, transparent),
+        radial-gradient(2px 2px at 15% 20%, #fff, transparent),
+        radial-gradient(2px 2px at 18% 25%, #fff, transparent),
+        radial-gradient(2px 2px at 22% 30%, #fff, transparent),
+        radial-gradient(2px 2px at 25% 35%, #fff, transparent),
+        radial-gradient(2px 2px at 28% 40%, #fff, transparent),
+        radial-gradient(2px 2px at 32% 45%, #fff, transparent),
+        radial-gradient(2px 2px at 35% 50%, #fff, transparent),
+        radial-gradient(2px 2px at 38% 55%, #fff, transparent),
+        radial-gradient(2px 2px at 42% 60%, #fff, transparent),
+        radial-gradient(2px 2px at 45% 65%, #fff, transparent),
+        radial-gradient(2px 2px at 48% 70%, #fff, transparent),
+        radial-gradient(2px 2px at 52% 75%, #fff, transparent),
+        radial-gradient(2px 2px at 55% 80%, #fff, transparent),
+        radial-gradient(2px 2px at 58% 85%, #fff, transparent),
+        radial-gradient(2px 2px at 62% 90%, #fff, transparent),
+        radial-gradient(2px 2px at 65% 95%, #fff, transparent),
+        radial-gradient(2px 2px at 70% 2%, #fff, transparent),
+        radial-gradient(2px 2px at 75% 6%, #fff, transparent),
+        radial-gradient(2px 2px at 80% 12%, #fff, transparent),
+        radial-gradient(2px 2px at 85% 18%, #fff, transparent),
+        radial-gradient(2px 2px at 90% 24%, #fff, transparent),
+        radial-gradient(2px 2px at 95% 30%, #fff, transparent),
+        radial-gradient(2px 2px at 98% 35%, #fff, transparent),
+        radial-gradient(2px 2px at 1% 40%, #fff, transparent),
+        radial-gradient(2px 2px at 3% 45%, #fff, transparent),
+        radial-gradient(2px 2px at 6% 50%, #fff, transparent),
+        radial-gradient(2px 2px at 8% 55%, #fff, transparent),
+        radial-gradient(2px 2px at 10% 60%, #fff, transparent),
+        radial-gradient(2px 2px at 12% 65%, #fff, transparent),
+        radial-gradient(2px 2px at 14% 70%, #fff, transparent),
+        radial-gradient(2px 2px at 16% 75%, #fff, transparent),
+        radial-gradient(2px 2px at 18% 80%, #fff, transparent),
+        radial-gradient(2px 2px at 20% 85%, #fff, transparent),
+        radial-gradient(2px 2px at 22% 90%, #fff, transparent),
+        radial-gradient(2px 2px at 24% 95%, #fff, transparent),
+        radial-gradient(2px 2px at 26% 10%, #fff, transparent),
+        radial-gradient(2px 2px at 28% 15%, #fff, transparent),
+        radial-gradient(2px 2px at 30% 20%, #fff, transparent),
+        radial-gradient(2px 2px at 32% 25%, #fff, transparent),
+        radial-gradient(2px 2px at 34% 30%, #fff, transparent),
+        radial-gradient(2px 2px at 36% 35%, #fff, transparent),
+        radial-gradient(2px 2px at 38% 40%, #fff, transparent),
+        radial-gradient(2px 2px at 40% 45%, #fff, transparent),
+        radial-gradient(2px 2px at 42% 50%, #fff, transparent),
+        radial-gradient(2px 2px at 44% 55%, #fff, transparent),
+        radial-gradient(2px 2px at 46% 60%, #fff, transparent),
+        radial-gradient(2px 2px at 48% 65%, #fff, transparent),
+        radial-gradient(2px 2px at 50% 70%, #fff, transparent),
+        radial-gradient(2px 2px at 52% 75%, #fff, transparent),
+        radial-gradient(2px 2px at 54% 80%, #fff, transparent),
+        radial-gradient(2px 2px at 56% 85%, #fff, transparent),
+        radial-gradient(2px 2px at 58% 90%, #fff, transparent),
+        radial-gradient(2px 2px at 60% 95%, #fff, transparent),
+        radial-gradient(2px 2px at 62% 5%, #fff, transparent),
+        radial-gradient(2px 2px at 64% 10%, #fff, transparent),
+        radial-gradient(2px 2px at 66% 15%, #fff, transparent),
+        radial-gradient(2px 2px at 68% 20%, #fff, transparent),
+        radial-gradient(2px 2px at 70% 25%, #fff, transparent),
+        radial-gradient(2px 2px at 72% 30%, #fff, transparent),
+        radial-gradient(2px 2px at 74% 35%, #fff, transparent),
+        radial-gradient(2px 2px at 76% 40%, #fff, transparent),
+        radial-gradient(2px 2px at 78% 45%, #fff, transparent),
+        radial-gradient(2px 2px at 80% 50%, #fff, transparent),
+        radial-gradient(2px 2px at 82% 55%, #fff, transparent),
+        radial-gradient(2px 2px at 84% 60%, #fff, transparent),
+        radial-gradient(2px 2px at 86% 65%, #fff, transparent),
+        radial-gradient(2px 2px at 88% 70%, #fff, transparent),
+        radial-gradient(2px 2px at 90% 75%, #fff, transparent),
+        radial-gradient(2px 2px at 92% 80%, #fff, transparent),
+        radial-gradient(2px 2px at 94% 85%, #fff, transparent),
+        radial-gradient(2px 2px at 96% 90%, #fff, transparent),
+        radial-gradient(2px 2px at 98% 95%, #fff, transparent),
+        /* Крупные звёзды */
+        radial-gradient(4px 4px at 25% 25%, #fff, transparent),
+        radial-gradient(4px 4px at 75% 75%, #fff, transparent),
+        radial-gradient(4px 4px at 50% 10%, #fff, transparent),
+        radial-gradient(4px 4px at 90% 50%, #fff, transparent),
+        radial-gradient(4px 4px at 10% 90%, #fff, transparent);
     background-repeat: no-repeat;
-    animation: twinkle 4s infinite alternate;
+    animation: twinkle 3s infinite alternate;
 }
 
 @keyframes twinkle {
-    0% { opacity: 0.4; }
+    0% { opacity: 0.5; }
     100% { opacity: 1; }
 }
 
@@ -62,14 +129,16 @@ body {
     border-radius: 16px;
     box-shadow: 0 0 20px rgba(177, 141, 160, 0.4);
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
     backdrop-filter: blur(5px);
     border: 1px solid #b18da0;
+    position: relative;
+    z-index: 10;
 }
 
 /* Заголовок */
 .main-title {
-    font-size: 2.5em;
+    font-size: 1.8em;
     color: #fff;
     margin-bottom: 5px;
     text-shadow: 0 0 10px rgba(177, 141, 160, 0.8);
@@ -77,16 +146,11 @@ body {
 }
 
 .sub-title {
-    font-size: 1.6em;
+    font-size: 2.1em;
     color: #b18da0;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-weight: 600;
-}
-
-p {
-    font-size: 1.1em;
-    color: #ddd;
-    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 /* Форма */
@@ -106,20 +170,21 @@ label {
     margin-left: 10%;
 }
 
-input[type="text"] {
-    padding: 12px;
+input[type="date"] {
+    padding: 10px;
     width: 80%;
     max-width: 300px;
     border: 1px solid #b18da0;
     border-radius: 6px;
-    background-color: #111;
+    background: #111;
     color: #fff;
     font-size: 1em;
-    margin-bottom: 20px;
 }
 
+/* Кнопка */
 button {
-    padding: 12px 28px;
+    margin-top: 20px;
+    padding: 12px 24px;
     background-color: #b18da0;
     color: white;
     border: none;
@@ -132,30 +197,27 @@ button {
 
 button:hover {
     background-color: #c9a3b8;
-    transform: scale(1.08);
+    transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(177, 141, 160, 0.5);
 }
 
 /* Результат */
 #result {
     margin-top: 25px;
+    text-align: left;
+    background: rgba(177, 141, 160, 0.1);
     padding: 20px;
-    background: rgba(177, 141, 160, 0.2);
     border-radius: 10px;
-    border-left: 3px solid #b18da0;
+    border-left: 4px solid #b18da0;
 }
 
-#result h3 {
-    color: #fff;
-    margin-bottom: 15px;
-    font-size: 1.3em;
+#result h2, #result h3 {
+    color: #b18da0;
+    margin: 15px 0 8px 0;
 }
 
-#karmicTailCode,
-#karmicTailName,
-#karmicTailDescription {
+#result p {
     margin: 8px 0;
-    font-size: 1.15em;
+    line-height: 1.5;
     color: #fff;
-    word-wrap: break-word;
 }
