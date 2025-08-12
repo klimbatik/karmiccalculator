@@ -29,7 +29,6 @@ body {
     pointer-events: none;
     z-index: -1;
     background: 
-        /* Много мелких ярких звёзд */
         radial-gradient(2px 2px at 1% 1%, #fff, transparent),
         radial-gradient(2px 2px at 3% 5%, #fff, transparent),
         radial-gradient(2px 2px at 6% 10%, #fff, transparent),
@@ -107,7 +106,6 @@ body {
         radial-gradient(2px 2px at 94% 85%, #fff, transparent),
         radial-gradient(2px 2px at 96% 90%, #fff, transparent),
         radial-gradient(2px 2px at 98% 95%, #fff, transparent),
-        /* Крупные звёзды */
         radial-gradient(4px 4px at 25% 25%, #fff, transparent),
         radial-gradient(4px 4px at 75% 75%, #fff, transparent),
         radial-gradient(4px 4px at 50% 10%, #fff, transparent),
@@ -129,14 +127,14 @@ body {
     border-radius: 16px;
     box-shadow: 0 0 20px rgba(177, 141, 160, 0.4);
     width: 90%;
-    max-width: 600px;
+    max-width: 500px;
     backdrop-filter: blur(5px);
     border: 1px solid #b18da0;
     position: relative;
     z-index: 10;
 }
 
-/* Заголовок */
+/* Заголовки */
 .main-title {
     font-size: 1.8em;
     color: #fff;
@@ -146,11 +144,18 @@ body {
 }
 
 .sub-title {
-    font-size: 2.1em;
+    font-size: 2.2em;
     color: #b18da0;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     font-weight: 600;
+    text-shadow: 0 0 15px rgba(177, 141, 160, 0.7);
     letter-spacing: -0.5px;
+}
+
+p {
+    color: #ccc;
+    margin-bottom: 20px;
+    font-size: 1.1em;
 }
 
 /* Форма */
@@ -168,29 +173,40 @@ label {
     color: #b18da0;
     align-self: flex-start;
     margin-left: 10%;
+    font-size: 1em;
 }
 
-input[type="date"] {
-    padding: 10px;
+input[type="text"] {
+    padding: 12px;
     width: 80%;
     max-width: 300px;
     border: 1px solid #b18da0;
     border-radius: 6px;
     background: #111;
     color: #fff;
-    font-size: 1em;
+    font-size: 1.1em;
+    font-family: 'Courier New', monospace; /* деловой шрифт */
+    text-align: center;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #c9a3b8;
+    box-shadow: 0 0 10px rgba(177, 141, 160, 0.3);
 }
 
 /* Кнопка */
 button {
     margin-top: 20px;
-    padding: 12px 24px;
+    padding: 12px 28px;
     background-color: #b18da0;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
+    font-weight: 500;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(177, 141, 160, 0.3);
 }
@@ -211,13 +227,15 @@ button:hover {
     border-left: 4px solid #b18da0;
 }
 
-#result h2, #result h3 {
+#result h3 {
     color: #b18da0;
     margin: 15px 0 8px 0;
+    font-size: 1.3em;
 }
 
 #result p {
     margin: 8px 0;
     line-height: 1.5;
     color: #fff;
+    font-size: 1em;
 }
