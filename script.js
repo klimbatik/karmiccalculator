@@ -341,11 +341,11 @@
 
         // Формируем результат
         resultDiv.innerHTML = `
-            <h3 style="color:#b18da0; margin-bottom: 15px;">${title}</h3>
-            ${karma}
-            ${soul}
-            ${pastLessons}
-            ${strengths}
+            <h3 style="color:#b18da0; text-align: left; margin-bottom: 15px;">${title}</h3>
+            <div style="text-align: left;">${karma}</div>
+            <div style="text-align: left;">${soul}</div>
+            <div style="text-align: left;">${pastLessons}</div>
+            <div style="text-align: left;">${strengths}</div>
         `;
         resultDiv.style.display = "block";
         resultDiv.scrollTop = 0;
