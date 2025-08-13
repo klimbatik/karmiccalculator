@@ -339,13 +339,35 @@
                 strengths = "";
         }
 
-        // Формируем результат
+        // Формируем результат с кнопкой
         resultDiv.innerHTML = `
             <h3 style="color:#b18da0; text-align: left; margin-bottom: 15px;">${title}</h3>
-            <div style="text-align: left;">${karma}</div>
-            <div style="text-align: left;">${soul}</div>
-            <div style="text-align: left;">${pastLessons}</div>
-            <div style="text-align: left;">${strengths}</div>
+            <div style="text-align: left; line-height: 1.6;">${karma}</div>
+            <div style="text-align: left; line-height: 1.6;">${soul}</div>
+            <div style="text-align: left; line-height: 1.6;">${pastLessons}</div>
+            <div style="text-align: left; line-height: 1.6;">${strengths}</div>
+            <div style="text-align: left; margin-top: 25px;">
+                <a 
+                    href="https://vk.com/im?entrypoint=community_page&media=&sel=-230302438" 
+                    target="_blank"
+                    style="
+                        display: inline-block;
+                        padding: 12px 28px;
+                        background-color: #b18da0;
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 6px;
+                        font-weight: 500;
+                        font-size: 1.1em;
+                        box-shadow: 0 4px 10px rgba(177, 141, 160, 0.4);
+                        transition: all 0.3s ease;
+                    "
+                    onmouseover="this.style.backgroundColor='#c9a3b8'; this.style.transform='scale(1.05)';"
+                    onmouseout="this.style.backgroundColor='#b18da0'; this.style.transform='scale(1)';"
+                >
+                    Узнать подробнее
+                </a>
+            </div>
         `;
         resultDiv.style.display = "block";
         resultDiv.scrollTop = 0;
