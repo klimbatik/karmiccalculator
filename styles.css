@@ -146,12 +146,15 @@ body::before {
 }
 
 .sub-title {
-    font-size: 2.2em;
+    font-size: 1.8em;           /* Уменьшили с 2.2 до 1.8 */
     color: #b18da0;
     margin-bottom: 20px;
     font-weight: 600;
     text-shadow: 0 0 15px rgba(177, 141, 160, 0.7);
     letter-spacing: -0.5px;
+    white-space: nowrap;        /* Запрещает перенос на другую строку */
+    overflow: hidden;           /* Скрывает часть, если не помещается */
+    text-overflow: ellipsis;    /* Показывает троеточие, если не помещается */
 }
 
 /* Подпись "Дата рождения" */
@@ -213,9 +216,9 @@ button:hover {
 
 /* Прокручиваемый блок результатов */
 #result {
-    max-height: 40vh;        /* Ограничение по высоте — не до конца экрана */
-    min-height: 100px;        /* Можно увидеть даже маленький текст */
-    overflow-y: auto;         /* Прокрутка, если текст длинный */
+    max-height: 50vh;             /* Увеличили до 50vh — больше места */
+    min-height: 100px;
+    overflow-y: auto;             /* Прокрутка по вертикали */
     margin-top: 25px;
     padding: 20px;
     background: rgba(177, 141, 160, 0.1);
@@ -225,6 +228,7 @@ button:hover {
     line-height: 1.6;
     display: none;
     animation: fadeIn 0.6s ease-out;
+    width: 90%;                   /* Чтобы не вылезал за контейнер */
 }
 
 /* Заголовки в результате — розовые */
@@ -261,4 +265,5 @@ button:hover {
 #result::-webkit-scrollbar-thumb:hover {
     background: #c9a3b8;
 }
+
 
